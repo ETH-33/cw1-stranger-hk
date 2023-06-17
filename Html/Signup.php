@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="container">
-    <h2>Login Form</h2>
+    <h2>Signup Form</h2>
     <form id="loginForm" onsubmit="submitForm(event)">
       <input type="text" id="firstName" placeholder="First Name" name="firstName" required>
       <input type="text" id="lastName" placeholder="Last Name" name="lastName" required>
