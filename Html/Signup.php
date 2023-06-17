@@ -12,11 +12,11 @@
 <div class="container">
     <h2>Signup Form</h2>
     <form id="loginForm" action="../Php/Data.php" onsubmit="submitForm(event)" method="POST">
-      <input type="text" name="firstName" placeholder="First Name" required>
-      <input type="text" name="lastName" placeholder="Last Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="password" name="password" placeholder="Password" required>
-      <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+      <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
+      <input type="text" name="lastName" id="lastName" placeholder="Last Name" required>
+      <input type="email" name="email" id="email" placeholder="Email" required>
+      <input type="password" name="password" id="password" placeholder="Password" required>
+      <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required>
       <button type="submit">Signup</button>
     </form>
   </div>
