@@ -9,6 +9,7 @@ $conn = mysqli_connect("localhost","root","","data");
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
+
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Retrieve form data
@@ -16,8 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $lastname = $_POST['lastName'];
   $email = $_POST['email'];
   $password = $_POST['password'];
-  // Perform any necessary data validation here...
+  $confirmPassword = $_POST['confirmPassword'];
 
+  // Perform any necessary data validation here...
+  if ($password !== $confirmPassword) {
+    die("Password and Confirm Password do not match!");
+  }
   // Prepare the SQL statement
   $sql = "INSERT INTO Cred (First_Name, Last_Name, Email, Password) VALUES (?, ?, ?, ?)";
   

@@ -6,11 +6,12 @@
 <head>
   <title>Signup Form</title>
   <link rel="stylesheet" href="../CSS/Signup.css">
+  <script src="../JS/Signup.js"></script>
 </head>
 <body>
 <div class="container">
     <h2>Signup Form</h2>
-    <form id="loginForm" action="../Php/Data.php" method="POST">
+    <form id="loginForm" action="../Php/Data.php" onsubmit="submitForm(event)" method="POST">
       <input type="text" name="firstName" placeholder="First Name" required>
       <input type="text" name="lastName" placeholder="Last Name" required>
       <input type="email" name="email" placeholder="Email" required>
@@ -19,6 +20,5 @@
       <button type="submit">Signup</button>
     </form>
   </div>
-  <script src="../JS/Signup.js"></script>
 </body>
 </html>
