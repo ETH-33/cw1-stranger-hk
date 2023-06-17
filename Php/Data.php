@@ -16,18 +16,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $lastname = $_POST['lastName'];
   $email = $_POST['email'];
   $password = $_POST['password'];
-  $cpassword = $_POST['cpassword'];
-
   // Perform any necessary data validation here...
 
   // Prepare the SQL statement
-  $sql = "INSERT INTO contact (First_Name, Last_Name, Email, Password, Cpassword) VALUES (?, ?, ?, ?, ?)";
+  $sql = "INSERT INTO Cred (First_Name, Last_Name, Email, Password) VALUES (?, ?, ?, ?)";
   
   // Create a prepared statement
   $stmt = mysqli_prepare($conn, $sql);
   
   // Bind the parameters to the statement
-  mysqli_stmt_bind_param($stmt, "sssss", $firstname, $lastname, $email, $password, $cpassword);
+  mysqli_stmt_bind_param($stmt, "ssss", $firstname, $lastname, $email, $password);
 
   // Execute the statement
   if (mysqli_stmt_execute($stmt)) {
