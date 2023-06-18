@@ -17,3 +17,11 @@ function submitForm(event) {
     // Reset the form
     document.getElementById("loginForm").reset();
   }
+// Function to toggle mobile menu
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+}
+
+// Event listener for mobile menu toggle
+document.querySelector('.menu-toggle').addEventListener('click', toggleMenu);
