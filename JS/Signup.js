@@ -15,7 +15,7 @@ function submitForm(event) {
     }
 
     // Reset the form
-    document.getElementById("loginForm").reset();
+    document.getElementById("signupForm").reset();
   }
 // Function to toggle mobile menu
 function toggleMenu() {
@@ -25,3 +25,4 @@ function toggleMenu() {
 
 // Event listener for mobile menu toggle
 document.querySelector('.menu-toggle').addEventListener('click', toggleMenu);
+document.getElementById("signupForm").submit();
