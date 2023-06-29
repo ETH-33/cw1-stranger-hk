@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Execute the statement
   if (mysqli_stmt_execute($stmt)) {
-      echo "Data inserted successfully.";
+    header("Location: ../Html/Login.php");
   } else {
       echo "Error: " . mysqli_stmt_error($stmt);
   }
