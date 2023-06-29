@@ -16,7 +16,7 @@
         <li><a href="Home.html">Home</a></li>
         <li><a href="#">Contact</a></li>
         <li><a href="Signup.html">Signup</a></li>
-        <li><a href="#">Signup</a></li>
+        <li><a href="#">Login</a></li>
       </ul>
       <div class="menu-toggle">
         <span></span>
