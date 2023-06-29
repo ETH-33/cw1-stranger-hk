@@ -15,8 +15,7 @@
       <ul class="nav-links">
         <li><a href="Home.html">Home</a></li>
         <li><a href="#">Contact</a></li>
-        <li><a href="Signup.html">Signup</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="http://localhost/cw1-stranger-hk/html/Login.php">Login</a></li>
       </ul>
       <div class="menu-toggle">
         <span></span>
