@@ -23,14 +23,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($password !== $confirmPassword) {
     die("Password and Confirm Password do not match!");
   }
+  //Hashed Password
+  $hashedPassword = md5($password);
+
   // Prepare the SQL statement
   $sql = "INSERT INTO Cred (First_Name, Last_Name, Email, Password) VALUES (?, ?, ?, ?)";
   
   // Create a prepared statement
   $stmt = mysqli_prepare($conn, $sql);
-  
+
   // Bind the parameters to the statement
-  mysqli_stmt_bind_param($stmt, "ssss", $firstname, $lastname, $email, $password);
+  mysqli_stmt_bind_param($stmt, "ssss", $firstname, $lastname, $email, $hashedPassword);
 
   // Execute the statement
   if (mysqli_stmt_execute($stmt)) {

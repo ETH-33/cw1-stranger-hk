@@ -14,7 +14,8 @@
       <h1 class="logo">Tour and Travel Company</h1>
       <ul class="nav-links">
         <li><a href="Home.html">Home</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="http://localhost/cw1-stranger-hk/html/Signup.php">Signup</a></li>
         <li><a href="http://localhost/cw1-stranger-hk/html/Login.php">Login</a></li>
       </ul>
       <div class="menu-toggle">

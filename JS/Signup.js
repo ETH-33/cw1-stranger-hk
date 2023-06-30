@@ -30,6 +30,11 @@ function submitForm(event) {
 
   if (!password) {
     errors.push('Please enter a password.');
+  } else {
+    const passwordRegex= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!password.match(passwordRegex)) {
+      errors.push('Password must contain at least one uppercase letter, one lowercase letter, one number and one special character.');
+    }
   }
 
   if (!confirmPassword) {

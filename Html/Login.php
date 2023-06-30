@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+    if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) {
+        header('Location: http://localhost/cw1-stranger-hk/html/main.php'); // Redirect to authorized page
+        exit;
+    }
 // Database connection
 $servername = "localhost";
 $username = "root";
@@ -16,15 +22,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form values
     $email = $_POST["email"];
     $password = $_POST["password"];
-
+    $hashedPassword = md5($password);
     // Prepare and execute SQL query
-    $sql = "SELECT * FROM cred WHERE email = '$email' AND password = '$password'";
+    $sql = "SELECT * FROM cred WHERE email = '$email' AND password = '$hashedPassword'";
     $result = mysqli_query($conn, $sql);
 
     // Check if a matching record is found
     if (mysqli_num_rows($result) == 1) {
+        $_SESSION['loggedIn'] = true;
         // Redirect to a new page upon successful login
-        header("Location: ../Html/Home.html");
+        header("Location: http://localhost/cw1-stranger-hk/html/main.php");
         exit();
     } else {
         $errorMessage = "Invalid email or password. Please try again.";
@@ -45,8 +52,9 @@ mysqli_close($conn);
         <h1 class="logo">Tour and Travel Company</h1>
         <ul class="nav-links">
             <li><a href="Home.html">Home</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="Contact.html">Contact</a></li>
             <li><a href="http://localhost/cw1-stranger-hk/html/Signup.php">Signup</a></li>
+            <li><a href="http://localhost/cw1-stranger-hk/html/Login.php">Login</a></li>
         </ul>
         <div class="menu-toggle">
             <span></span>
